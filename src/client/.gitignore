@@ -1,0 +1,63 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+
+# Android/IJ
+#
+*.iml
+.idea
+.gradle
+local.properties
+*.keystore
+
+dynamite/android/app/gradle/
+dynamite/android/app/gradlew
+dynamite/android/app/gradlew.bat
+garage/android/app/gradle/
+garage/android/app/gradlew
+garage/android/app/gradlew.bat
+
+# node.js
+#
+node_modules/
+npm-debug.log
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
+
+
+# project env variables
+env.js
+
+
+#VSCode
+.vscode
+tsconfig.json
+
+#Assets
+dynamite/ios/assets/common/assets
+garage/ios/assets/common/assets
