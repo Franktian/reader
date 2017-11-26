@@ -123,3 +123,49 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Logging
+LOG_DIR = str(BASE_DIR) + '/logs/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '[%(levelname)s] %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '[%(levelname)s] %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'log_file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': LOG_DIR + 'django.log',
+            'when': 'h',
+            'interval': 1,
+            'backupCount': 360,
+            'formatter': 'verbose',
+
+        }
+    },
+    'loggers': {
+        'user': {
+            'handlers': ['console', 'log_file'],
+            'propagate': True,
+            'level': 'INFO'
+        }
+    }
+}
