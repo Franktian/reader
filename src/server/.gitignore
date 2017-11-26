@@ -1,1 +1,2 @@
-user/migrations/*.py
+apps/*/migrations/*.py
+logs/*

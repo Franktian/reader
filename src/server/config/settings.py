@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
+    'apps.user',
 ]
 
 MIDDLEWARE = [
@@ -162,7 +162,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'user': {
+        'apps': {
             'handlers': ['console', 'log_file'],
             'propagate': True,
             'level': 'INFO'

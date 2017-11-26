@@ -2,7 +2,7 @@ import logging
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 
-from user.models import User
+from apps.user.models import User
 
 logger = logging.getLogger(__name__)
 # Create your views here.
