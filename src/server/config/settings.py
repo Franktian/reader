@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'legacy',
         'USER': 'franktian',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': '192.168.10.236',
         'PORT': '5432',
     }
 }
