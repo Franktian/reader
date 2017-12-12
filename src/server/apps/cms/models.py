@@ -3,18 +3,23 @@ from __future__ import unicode_literals
 
 from django.db import models
 from wagtail.wagtailcore.models import Page
+from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel,
+    MultiFieldPanel,
+    StreamFieldPanel,
 )
 
+from apps.cms.panel import PanelBlock
+
 class HomePage(Page):
-    page_name = models.BooleanField(
-        blank=True,
-        default=False,
-    )
+    content = StreamField([
+        ('panel', PanelBlock()),
+    ], blank=True, null=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel(
-            'page_name',
-        ),
+        MultiFieldPanel(
+            [StreamFieldPanel('content')],
+            heading="Home Panels"
+        )
     ]
