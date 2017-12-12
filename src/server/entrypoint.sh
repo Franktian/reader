@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Collecting static files"
+python manage.py collectstatic
+
 # Apply database migrations
 echo "Apply database migrations"
 python manage.py migrate
